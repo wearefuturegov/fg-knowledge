@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :guides
-    resources :series
     resources :teams
     resources :artefacts
   end
