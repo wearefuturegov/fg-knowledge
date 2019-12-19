@@ -5,5 +5,6 @@ class Team < ApplicationRecord
   end
 
   has_many :artefacts
-  has_many :series
+  has_many :collections
+  has_many :guides, through :collections
 end

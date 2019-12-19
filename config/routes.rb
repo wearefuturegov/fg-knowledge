@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :guides
     resources :teams
     resources :artefacts
+    resources :collections
   end
   # mount Fae below your admin namespec
   mount Fae::Engine => '/admin'

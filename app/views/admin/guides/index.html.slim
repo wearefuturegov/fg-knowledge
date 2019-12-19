@@ -6,6 +6,7 @@ main.content
       tr
         th.th-sortable-handle
         th Name
+        th Collection
         th.-action-wide Modified
         th.-action data-sorter="false"
 
@@ -15,6 +16,7 @@ main.content
           tr id=fae_sort_id(item)
             td.sortable-handle: i.icon-sort
             td = link_to item.fae_display_field, edit_admin_guide_path(item)
+            td = item.collection.name
             td = fae_date_format item.updated_at
             td = fae_delete_button item
       - else

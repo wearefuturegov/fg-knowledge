@@ -3,6 +3,7 @@
 
   main.content
     = fae_input f, :name
-    = fae_input f, :body
+    = fae_input f, :body, markdown: true
+    = fae_input f, :position
 
-    = fae_association f, :series
+    = fae_association f, :collection
