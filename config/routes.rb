@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get "artefacts", to: "artefacts#index"
+  root "home#index"
+  resources :artefacts, only: ["index"]
+  resources :teams, only: ["show"]
 
   namespace :admin do
     resources :teams

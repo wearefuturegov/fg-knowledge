@@ -1,0 +1,14 @@
+<section>
+    <h1>Learn from our best work</h1>
+    <p>Explore examples of work, see templates to get started quickly, and read guides.</p>
+</section>
+
+<section>
+    <%= link_to "Artefacts", artefacts_path %>
+</section>
+
+<section>
+    <% @teams.each do |t| %>
+        <a href="<%= team_path(t) %>"><h2><%= t.name %></h2></a>
+    <% end %>
+</section>

@@ -11,14 +11,18 @@
 
   <body>
 
-
     <header>
-      <a href="/">FutureGov Knowledge</a>
+      <%= link_to "FutureGov Knowledge", root_path %>
       <nav>
         <%= link_to "Artefacts", artefacts_path %>
       </nav>
     </header>
 
     <%= yield %>
+
+    <footer>
+      <p>FutureGov Knowledge is built and maintained by the technology and product design practice.</p>
+    </footer>
+
   </body>
 </html>
