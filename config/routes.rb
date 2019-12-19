@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+  get "artefacts", to: "artefacts#index"
+
   namespace :admin do
+    resources :teams
+    resources :artefacts
   end
   # mount Fae below your admin namespec
   mount Fae::Engine => '/admin'
