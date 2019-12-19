@@ -1,3 +1,5 @@
+<% content_for :title, "Artefacts" %>
+
 <h1>Artefacts</h1>
 
 <% @teams.each do |t| %>
@@ -5,14 +7,14 @@
     <h2><%= t.name %></h2>
 
     <ul>
-    <% t.artefacts.each do |a| %>
-        <li>
-            <a href="<%= a.link %>" target="blank">
-                <h3><%= a.name %></h3>
-            </a>
-            <p><%= a.description %></p>
-        </li>
-    <% end %>
+        <% t.artefacts.each do |a| %>
+            <li>
+                <a href="<%= a.link %>" target="blank">
+                    <h3><%= a.name %></h3>
+                </a>
+                <p><%= a.description %></p>
+            </li>
+        <% end %>
     </ul>
 
 <% end %>

@@ -1,0 +1,18 @@
+<% content_for :title, @team.name %>
+
+<h1><%= @team.name %></h1>
+
+<h2>Artefacts</h2>
+
+<ul>
+    <% @team.artefacts.each do |a| %>
+        <li>
+            <a href="<%= a.link %>" target="blank">
+                <h3><%= a.name %></h3>
+            </a>
+            <p><%= a.description %></p>
+        </li>
+    <% end %>
+</ul>
+
+<h2>Guides</h2>
