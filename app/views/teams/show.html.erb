@@ -16,3 +16,11 @@
 </ul>
 
 <h2>Guides</h2>
+
+<ul>
+    <% @team.collections.each do |c| %>
+        <li>
+            <%= c.name %>r
+        </li>
+    <% end %>
+</ul>

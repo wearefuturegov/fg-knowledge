@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "home#index"
   resources :artefacts, only: ["index"]
   resources :teams, only: ["show"]
+  resources :guides, only: ["index", "show"]
 
   namespace :admin do
     resources :guides
