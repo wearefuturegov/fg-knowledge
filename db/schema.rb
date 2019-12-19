@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_201435) do
+ActiveRecord::Schema.define(version: 2019_12_19_211525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -173,6 +173,24 @@ ActiveRecord::Schema.define(version: 2019_12_19_201435) do
     t.index ["unlock_token"], name: "index_fae_users_on_unlock_token", unique: true
   end
 
+  create_table "guides", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.integer "position"
+    t.bigint "series_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_guides_on_series_id"
+  end
+
+  create_table "series", force: :cascade do |t|
+    t.string "name"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_series_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -180,4 +198,6 @@ ActiveRecord::Schema.define(version: 2019_12_19_201435) do
     t.text "team_members"
   end
 
+  add_foreign_key "guides", "series"
+  add_foreign_key "series", "teams"
 end

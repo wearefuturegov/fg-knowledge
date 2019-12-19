@@ -27,6 +27,8 @@ module Fae
       [
         item('Artefacts', path: admin_artefacts_path),
         item('Teams', path: admin_teams_path),
+        item('Series', path: admin_series_path),
+        item('Guides', path: admin_guides_path),
         # scaffold inject marker
       ]
     end

@@ -1,9 +1,9 @@
-class Team < ApplicationRecord
+class Series < ApplicationRecord
   include Fae::BaseModelConcern
   def fae_display_field
     name
   end
 
-  has_many :artefacts
-  has_many :series
+  belongs_to :team
+  has_many :guides
 end

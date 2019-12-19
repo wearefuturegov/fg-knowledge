@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :teams, only: ["show"]
 
   namespace :admin do
+    resources :guides
+    resources :series
     resources :teams
     resources :artefacts
   end
