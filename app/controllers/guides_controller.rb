@@ -1,6 +1,7 @@
 class GuidesController < ApplicationController
     def index
-        @collections = Collection.all
+        @teams = Team.all
+        # @collections = Collection.all
     end
 
     def show

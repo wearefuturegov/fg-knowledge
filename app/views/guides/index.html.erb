@@ -1,0 +1,15 @@
+<% content_for :title, "Guides" %>
+
+<h1>Guides</h1>
+
+<% @teams.each do |team|%>
+    <h2><%= team.name %></h2>
+    <% team.collections.each do |collection| %>
+        <h3><%= collection.name %></h3>
+        <ol>
+            <% collection.guides.each do |guide|%>
+                <li><%= link_to guide.name, guide_path(guide) %></li>
+            <% end %>
+        </ol>
+    <% end %>
+<% end %>

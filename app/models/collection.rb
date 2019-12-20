@@ -6,4 +6,5 @@ class Collection < ApplicationRecord
   end
 
   belongs_to :team
+  has_many :guides
 end
