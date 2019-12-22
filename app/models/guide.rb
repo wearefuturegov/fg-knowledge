@@ -1,10 +1,13 @@
 class Guide < ApplicationRecord
   include Fae::BaseModelConcern
+  
   include PgSearch::Model
   multisearchable(
     against: [:name, :body, :collection],
     additional_attributes: -> (guide) { { collection_id: guide.collection_id } }
   )
+
+  validates :name, :body, :position, :collection, :short_description, presence: true
 
   acts_as_list add_new_at: :bottom
   default_scope { order(:position) }
