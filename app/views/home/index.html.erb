@@ -41,9 +41,22 @@
     </div>
 </section>
 
-<section class="teams-explorer">
-    <h3 class="teams-explorer__title">Explore by team</h3>
-    <% @teams.each do |t| %>
-        <a href="<%= team_path(t) %>"><h2><%= t.name %></h2></a>
-    <% end %>
+<section class="explore-by-team">
+    <div class="explore-by-team__inner container">
+        <h3 class="explore-by-team__title">Explore by team</h3>
+        <div class="explore-by-team__filmstrip">
+            <% @teams.each do |t| %>
+                <a class="explore-by-team__tile" href="<%= team_path(t) %>">
+                    <%= image_tag t.image.asset.home.url, class: "explore-by-team__image" %>
+                    <h2 class="explore-by-team__name"><%= t.name %></h2>
+                </a>
+            <% end %>
+        </div>
+    </div>
 </section>
+
+<div class="contribute">
+<section class="contribute__inner container">
+    Something missing? Suggest a change or addition on <a href="https://app.slack.com/client/T024ZJU1Z/CL11GC5NC"><strong>#knowledge-management</strong></a>.
+</section>
+</div>
