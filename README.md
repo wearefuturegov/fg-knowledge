@@ -1,24 +1,25 @@
-# README
+# FutureGov knowledge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A rails internal wiki that showcases artefacts, guides and templates for FutureGov.
 
-Things you may want to cover:
+Uses the [Fae CMS](https://faecms.com/) to manage content. Find it at `/admin`.
 
-* Ruby version
+Search is powered by the `pg_search` gem. Edits to searchable documents automatically trigger rebuilds of the search index.
 
-* System dependencies
+## Requirements
 
-* Configuration
+- ruby and rails 5.2 or greater
+- a running PostgreSQL database (search won't work with SQLite)
+- an AWS account with S3, to handle media uploads
 
-* Database creation
+## Running it locally
 
-* Database initialization
+1. Clone the repo, run `bundle install` and `rails db:setup`
 
-* How to run the test suite
+more coming...
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running it on the internet
 
-* Deployment instructions
+Works fine on Heroku with no extra steps.
 
-* ...
+more coming...
