@@ -4,6 +4,8 @@ class Team < ApplicationRecord
     name
   end
 
+  has_fae_image :image
+
   has_many :artefacts
 
   has_many :collections
