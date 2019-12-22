@@ -67,5 +67,8 @@
     }
     .site-header__nav-link{
         color: white;
+        &:focus{
+            color: $purple;
+        }
     }
 }

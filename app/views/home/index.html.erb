@@ -1,16 +1,48 @@
 <% content_for :title, "FutureGov Knowledge" %>
 
-<section>
-    <h1>Learn from our best work</h1>
-    <p>Explore examples of work, see templates to get started quickly, and read guides.</p>
+<section class="hero">
+    <div class="hero__inner container">
+        <div class="hero__main-content">
+            <h1 class="hero__headline">Learn from our best work</h1>
+            <p class="hero__strapline">Explore examples of work, see templates to get started quickly, and read guides.</p>
+        
+            <form class="search-form">
+                <input placeholder="Search..." class="search-form__input">
+                <button class="search-form__button"><%= image_tag "search.svg" %></button>
+            </form>
+            
+        </div>
+        <aside class="hero__sidebar">
+            <h2 class="hero__sidebar-title">Recent changes</h2>
+            <ul class="recent-changes">
+                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
+                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
+                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
+            </ul>
+        </aside>
+    </div>
 </section>
 
-<section>
-    <%= link_to "Artefacts", artefacts_path %>
-    <%= link_to "Guides", guides_path %>
+<section class="tiles">
+    <div class="tiles__inner container">
+        <a class="tile" href="<%= artefacts_path %>">
+            <h3 class="tile__headline">Artefacts</h3>
+            <p class="tile__abstract">Examples of our best work, mostly with original files suitable for re-use.</p>
+        </a>
+        <a class="tile" href="<%= guides_path %>">
+            <h3 class="tile__headline">Guides</h3>
+            <p class="tile__abstract">Examples of our best work, mostly with original files suitable for re-use.</p>
+        </a>
+
+        <a class="tile" href="#">
+            <h3 class="tile__headline">Templates</h3>
+            <p class="tile__abstract">Examples of our best work, mostly with original files suitable for re-use.</p>
+        </a>
+    </div>
 </section>
 
-<section>
+<section class="teams-explorer">
+    <h3 class="teams-explorer__title">Explore by team</h3>
     <% @teams.each do |t| %>
         <a href="<%= team_path(t) %>"><h2><%= t.name %></h2></a>
     <% end %>
