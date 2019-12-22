@@ -1,17 +1,23 @@
 <% content_for :title, "Artefacts" %>
 
-<h1>Artefacts</h1>
+<%= render "shared/page_header", title: "Artefacts" %>
 
-<% @teams.each do |t| %>
-    <h2><%= t.name %></h2>
-    <ul>
-        <% t.artefacts.each do |a| %>
-            <li>
-                <a href="<%= a.link %>" target="blank">
-                    <h3><%= a.name %></h3>
-                </a>
-                <p><%= a.description %></p>
-            </li>
+<main class="page-body">
+    <div class="container">
+
+        <% @teams.each do |t| %>
+            <h2><%= t.name %></h2>
+            <ul>
+                <% t.artefacts.each do |a| %>
+                    <li>
+                        <a href="<%= a.link %>" target="blank">
+                            <h3><%= a.name %></h3>
+                        </a>
+                        <p><%= a.description %></p>
+                    </li>
+                <% end %>
+            </ul>
         <% end %>
-    </ul>
-<% end %>
+
+    </div>
+</main>

@@ -5,19 +5,19 @@
         <div class="hero__main-content">
             <h1 class="hero__headline">Learn from our best work</h1>
             <p class="hero__strapline">Explore examples of work, see templates to get started quickly, and read guides.</p>
-        
-            <form class="search-form">
-                <input placeholder="Search..." class="search-form__input">
+            <form class="search-form" method="get" action="/search">
+                <input placeholder="Search..." class="search-form__input" required>
                 <button class="search-form__button"><%= image_tag "search.svg" %></button>
             </form>
-            
         </div>
         <aside class="hero__sidebar">
             <h2 class="hero__sidebar-title">Recent changes</h2>
             <ul class="recent-changes">
-                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
-                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
-                <li class="recent-changes__item"><a class="recent-changes__link" href="#">Example page</a></li>
+                <% @recently_updated.each do |recent| %>
+                    <li class="recent-changes__item">
+                        <a class="recent-changes__link" href="#"><%= recent.name %></a>
+                    </li>
+                <% end %>
             </ul>
         </aside>
     </div>
@@ -33,10 +33,9 @@
             <h3 class="tile__headline">Guides</h3>
             <p class="tile__abstract">Examples of our best work, mostly with original files suitable for re-use.</p>
         </a>
-
-        <a class="tile" href="#">
+        <a class="tile tile--coming-soon">
             <h3 class="tile__headline">Templates</h3>
-            <p class="tile__abstract">Examples of our best work, mostly with original files suitable for re-use.</p>
+            <p class="tile__abstract">Coming soon</p>
         </a>
     </div>
 </section>
@@ -56,7 +55,9 @@
 </section>
 
 <div class="contribute">
-<section class="contribute__inner container">
-    Something missing? Suggest a change or addition on <a href="https://app.slack.com/client/T024ZJU1Z/CL11GC5NC"><strong>#knowledge-management</strong></a>.
-</section>
+    <div class="container">
+        <section class="contribute__inner">
+            Something missing? Suggest a change or addition on <a href="https://app.slack.com/client/T024ZJU1Z/CL11GC5NC"><strong>#knowledge-management</strong></a>.
+        </section>
+    </div>
 </div>

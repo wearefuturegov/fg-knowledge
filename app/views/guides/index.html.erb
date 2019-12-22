@@ -1,15 +1,21 @@
 <% content_for :title, "Guides" %>
 
-<h1>Guides</h1>
+<%= render "shared/page_header", title: "Guides" %>
 
-<% @teams.each do |team|%>
-    <h2><%= team.name %></h2>
-    <% team.collections.each do |collection| %>
-        <h3><%= collection.name %></h3>
-        <ol>
-            <% collection.guides.each do |guide|%>
-                <li><%= link_to guide.name, guide_path(guide) %></li>
+<main class="page-body">
+    <div class="container">
+
+        <% @teams.each do |team|%>
+            <h2><%= team.name %></h2>
+            <% team.collections.each do |collection| %>
+                <h3><%= collection.name %></h3>
+                <ol>
+                    <% collection.guides.each do |guide|%>
+                        <li><%= link_to guide.name, guide_path(guide) %></li>
+                    <% end %>
+                </ol>
             <% end %>
-        </ol>
-    <% end %>
-<% end %>
+        <% end %>
+
+    </div>
+</main>
