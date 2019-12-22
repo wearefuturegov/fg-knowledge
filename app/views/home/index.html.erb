@@ -15,7 +15,7 @@
             <ul class="recent-changes">
                 <% @recently_updated.each do |recent| %>
                     <li class="recent-changes__item">
-                        <a class="recent-changes__link" href="#"><%= recent.name %></a>
+                        <%= link_to recent.name, recent, class: "recent-changes__link" %>
                     </li>
                 <% end %>
             </ul>
