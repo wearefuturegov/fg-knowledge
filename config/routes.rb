@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   root "home#index"
-  resources :artefacts, only: ["index"]
+  resources :artefacts, only: ["index", "show"]
   resources :teams, only: ["show"]
   resources :guides, only: ["index", "show"]
+  
+  get "/search", to: "search#results" 
 
   namespace :admin do
     resources :guides

@@ -10,6 +10,7 @@
 }
 
 .page-header__context{
+    margin: 0;
     font-weight: bold;
     font-size: 1.2rem;
     @media screen and (min-width: 800px){
@@ -18,6 +19,7 @@
 }
 
 .page-header__title{
+    margin: 0;
     font-size: 2.3rem;
     @media screen and (min-width: 800px){
         font-size: 3rem;
