@@ -29,9 +29,17 @@
             </div>
             
             <aside class="two-column-layout__sidebar">
-                <h3 class="list-header">Team members</h3>
-                <%= markdown(@team.team_members) %>
+                <% if @team.team_members? %>
+                    <h3 class="list-header">Team members</h3>
+                    <%= markdown(@team.team_members) %>
+                <% end %>
+
+                <% if @team.learn_more? %>
+                    <h3 class="list-header">Learn more</h3>
+                    <%= markdown(@team.learn_more) %>
+                <% end %>
             </aside>
+
         </div>
 
     </div>

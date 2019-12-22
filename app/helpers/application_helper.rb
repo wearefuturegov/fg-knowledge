@@ -3,7 +3,9 @@ module ApplicationHelper
         renderer = ::Redcarpet::Render::HTML.new({
             hard_wrap: true,
         })
-        markdown = ::Redcarpet::Markdown.new(renderer)
+        markdown = ::Redcarpet::Markdown.new(renderer, {
+            autolink: true
+        })
         markdown.render(text).html_safe
     end
 end
