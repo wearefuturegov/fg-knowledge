@@ -23,6 +23,7 @@
 }
 
 .hero__headline{
+    margin-top: 0px;
     font-size: 2.3rem;
     margin-bottom: 5px;
     @media screen and (min-width: 800px){
@@ -95,6 +96,7 @@
 
 
 .hero__sidebar-title{
+    margin-top: 0px;
     font-size: 1.2rem;
     padding-bottom: 10px;
     border-bottom: 3px solid white;
@@ -104,6 +106,7 @@
 
 .recent-changes{
     list-style: none;
+    padding: 0;
 }
 
 .recent-changes__item{
@@ -174,6 +177,7 @@
 
 .tile__headline{
     font-size: 1.3rem;
+    margin-top: 0px;
     margin-bottom: 7px;
     color: $purple;
     text-decoration: underline;
@@ -185,6 +189,7 @@
 
 .tile__abstract{
     font-size: 1.1rem;
+    margin-bottom: 0px;
 }
 
 .explore-by-team{
@@ -267,7 +272,9 @@
 }
 
 .explore-by-team__name{
+    margin-top: 0px;
     font-size: 1.1rem;
+    margin-bottom: 0px;
     color: white;
     position: relative;
     @media screen and (min-width: 800px){
