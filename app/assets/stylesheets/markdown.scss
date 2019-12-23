@@ -1,0 +1,31 @@
+@import "vars";
+
+.markdown{
+    color: $black;
+    // deliberately ems
+    font-size: 1.1em;
+    line-height: 1.4;
+
+    // First element is in line with top of element
+    *:first-child{
+        margin-top: 0px;
+    }
+
+    // Add more left padding to list items
+    li{
+        padding-left: 10px;
+    }
+
+    // Link styles
+    a{
+        color: $purple;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:focus{
+            background: $yellow;
+            outline: 3px solid $yellow;
+        }
+    }
+}
