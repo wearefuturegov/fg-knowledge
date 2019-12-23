@@ -40,14 +40,6 @@ body{
     }
 }
 
-.list-header{
-    margin-top: 0px;
-    font-size: 1.2rem;
-    padding-bottom: 10px;
-    border-bottom: 3px solid $black;
-    margin-bottom: 10px;
-}
-
 .two-column-layout{
     display: grid;
     grid-row-gap: 30px;
@@ -73,31 +65,4 @@ body{
         grid-column: 2 / 3;
         grid-row: 1 / 2;
     }
-}
-
-.sidebar-list{
-    margin-bottom: 30px;
-    @media screen and (min-width: 700px){
-        margin-bottom: 60px;
-    }
-
-    p{
-        color: $black;
-        font-size: 1.1rem;
-        line-height: 1.4;
-    }
-
-    a{
-        color: $purple;
-        text-decoration: none;
-        font-weight: bold;
-        &:hover{
-            text-decoration: underline;
-        }
-        &:focus{
-            background: $yellow;
-            outline: 3px solid $yellow;
-        }
-    }
-
 }

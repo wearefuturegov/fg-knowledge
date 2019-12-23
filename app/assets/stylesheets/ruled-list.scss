@@ -1,0 +1,43 @@
+@import "vars";
+
+.ruled-list{
+    margin-bottom: 30px;
+    color: $black;
+    @media screen and (min-width: 700px){
+        margin-bottom: 60px;
+    }
+    ul, ol{
+        padding: 0;
+        list-style: none;
+    }
+    li{
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    a{
+        color: $purple;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:focus{
+            background: $yellow;
+            outline: 3px solid $yellow;
+        }
+    }
+}
+
+.ruled-list__header{
+    margin-top: 0px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 3px solid $black;
+    margin-bottom: 15px;
+}
+
+.ruled-list__context{
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+}

@@ -11,20 +11,32 @@
             </div>
             
             <aside class="two-column-layout__sidebar">
-                <div class="sidebar-list">
-                    <h3 class="list-header">In this guide</h3>
+
+                <div class="ruled-list">
+                    <h3 class="ruled-list__header">On this page</h3>
                     <%= toc(@guide.body) %>
                 </div>
-                <div class="sidebar-list">
-                    <h3 class="list-header">Part of <%= @guide.collection.name %></h3>
+
+                <div class="ruled-list">
+                    <h3 class="ruled-list__header">
+                        <span class="ruled-list__context">Part of</span> 
+                        <%= @guide.collection.name %>
+                    </h3>
                     <ol>
                     <% @guide.collection.guides.each do |guide| %>
-                        <li><%= link_to guide.name, guide %></li>
+                        <li>
+                            <% if current_page?(guide) %>
+                                <%= guide.name %>
+                            <% else %>
+                                <%= link_to guide.name, guide %>
+                            <% end %>
+                        </li>
+
                     <% end %>
                     </ol>
                 </div>
 
-                <div class="owner">
+                <div class="info-box">
                     The <%= link_to @guide.collection.team.name, @guide.collection.team %> team owns this guide.
                 </div>
             </aside>
