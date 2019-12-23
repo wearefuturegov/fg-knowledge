@@ -12,10 +12,16 @@
             
             <aside class="two-column-layout__sidebar">
                 <div class="sidebar-list">
-                        <h3 class="list-header">Part of</h3>
-                        <% @guide.collection.guides.each do |guide| %>
-                            <li><%= link_to guide.name, guide %></li>
-                        <% end %>
+                    <h3 class="list-header">In this guide</h3>
+                    <%= toc(@guide.body) %>
+                </div>
+                <div class="sidebar-list">
+                    <h3 class="list-header">Part of <%= @guide.collection.name %></h3>
+                    <ol>
+                    <% @guide.collection.guides.each do |guide| %>
+                        <li><%= link_to guide.name, guide %></li>
+                    <% end %>
+                    </ol>
                 </div>
             </aside>
 
