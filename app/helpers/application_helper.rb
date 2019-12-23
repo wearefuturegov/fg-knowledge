@@ -14,6 +14,6 @@ module ApplicationHelper
     def toc(text)
         renderer = ::Redcarpet::Render::HTML_TOC.new()
         markdown = ::Redcarpet::Markdown.new(renderer)
-        markdown.render(text)
+        markdown.render(text).html_safe
     end
 end
