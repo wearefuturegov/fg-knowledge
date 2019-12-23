@@ -75,8 +75,29 @@ body{
     }
 }
 
-p{
-    color: $black;
-    font-size: 1.1rem;
-    line-height: 1.4;
+.sidebar-list{
+    margin-bottom: 30px;
+    @media screen and (min-width: 700px){
+        margin-bottom: 60px;
+    }
+
+    p{
+        color: $black;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+
+    a{
+        color: $purple;
+        text-decoration: none;
+        font-weight: bold;
+        &:hover{
+            text-decoration: underline;
+        }
+        &:focus{
+            background: $yellow;
+            outline: 3px solid $yellow;
+        }
+    }
+
 }

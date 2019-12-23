@@ -27,5 +27,12 @@
 }
 
 .page-header__lede{
-    
+    font-size: 1.2rem;
+    color: $grey;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    @media screen and (min-width: 800px){
+        margin-top: 15px;
+        font-size: 1.4rem;
+    }
 }

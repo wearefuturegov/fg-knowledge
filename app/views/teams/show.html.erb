@@ -29,15 +29,19 @@
             </div>
             
             <aside class="two-column-layout__sidebar">
-                <% if @team.team_members? %>
-                    <h3 class="list-header">Team members</h3>
-                    <%= markdown(@team.team_members) %>
-                <% end %>
+                <div class="sidebar-list">
+                    <% if @team.team_members? %>
+                        <h3 class="list-header">Team members</h3>
+                        <%= markdown(@team.team_members) %>
+                    <% end %>
+                </div>
 
-                <% if @team.learn_more? %>
-                    <h3 class="list-header">Learn more</h3>
-                    <%= markdown(@team.learn_more) %>
-                <% end %>
+                <div class="sidebar-list">
+                    <% if @team.learn_more? %>
+                        <h3 class="list-header">Learn more</h3>
+                        <%= markdown(@team.learn_more) %>
+                    <% end %>
+                </div>
             </aside>
 
         </div>

@@ -1,11 +1,25 @@
 <% content_for :title, @guide.name %>
 
-<%= render "shared/page_header", title: @guide.name, context: "Guide" %>
+<%= render "shared/page_header", title: @guide.name, context: "Guide", lede: @guide.short_description %>
 
 <main class="page-body">
     <div class="container">
 
-        <%= markdown(@guide.body) %>
+        <div class="two-column-layout">
+            <div class="two-column-layout__main-content">
+                <%= markdown(@guide.body) %>
+            </div>
+            
+            <aside class="two-column-layout__sidebar">
+                <div class="sidebar-list">
+                        <h3 class="list-header">Part of</h3>
+                        <% @guide.collection.guides.each do |guide| %>
+                            <li><%= link_to guide.name, guide %></li>
+                        <% end %>
+                </div>
+            </aside>
+
+        </div>
 
     </div>
 </main>
