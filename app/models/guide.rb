@@ -3,15 +3,33 @@ class Guide < ApplicationRecord
   
   include PgSearch::Model
   multisearchable(
-    against: [:name, :body, :collection],
-    additional_attributes: -> (guide) { { collection_id: guide.collection_id } }
+    against: [
+      :name, 
+      :short_description, 
+      :body,
+      :collection_name, 
+      :team_name
+    ],
   )
 
-  validates :name, :body, :position, :collection, :short_description, presence: true
+  validates :name, 
+    :body, 
+    :position, 
+    :collection, 
+    :short_description, 
+  presence: true
 
   acts_as_list add_new_at: :bottom
   default_scope { order(:position) }
 
+  def collection_name
+    self.collection.name
+  end
+
+  def team_name
+    self.collection.team.name
+  end
+  
   def fae_display_field
     name
   end
