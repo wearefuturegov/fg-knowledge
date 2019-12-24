@@ -12,6 +12,9 @@
 
   <body>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <header class="site-header <% if @is_home %>site-header--inverted<% end %>">
       <a href="<%= root_path %>" class="site-header__masthead">
         <%= image_tag "logo.svg", class: "site-header__logo" %>
