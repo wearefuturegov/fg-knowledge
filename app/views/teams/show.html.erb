@@ -7,38 +7,31 @@
 
         <div class="two-column-layout">
             <div class="two-column-layout__main-content">
-                <h2>Artefacts</h2>
-                <ul>
+                <h2 class="section-title">Artefacts</h2>
+                <ul class="team-artefacts">
                     <% @team.artefacts.each do |a| %>
-                        <li>
-                            <a href="<%= a.link %>" target="blank">
-                                <h3><%= a.name %></h3>
-                            </a>
-                            <p><%= a.description %></p>
-                        </li>
+                        <%= render "shared/artefact", artefact: a %>
                     <% end %>
                 </ul>
-                <h2>Guides</h2>
-                <ul>
+                <h2 class="section-title">Guides</h2>
+                <ul class="team-artefacts">
                     <% @team.collections.each do |c| %>
-                        <li>
-                            <%= c.name %>r
-                        </li>
+                        <%= render "shared/collection", collection: c %>
                     <% end %>
                 </ul>
             </div>
             
             <aside class="two-column-layout__sidebar">
-                <div class="sidebar-list">
+                <div class="ruled-area ruled-area--markdown">
                     <% if @team.team_members? %>
-                        <h3 class="list-header">Team members</h3>
+                        <h3 class="ruled-area__header">Team members</h3>
                         <%= markdown(@team.team_members) %>
                     <% end %>
                 </div>
 
-                <div class="sidebar-list">
+                <div class="ruled-area ruled-area--markdown">
                     <% if @team.learn_more? %>
-                        <h3 class="list-header">Learn more</h3>
+                        <h3 class="ruled-area__header">Learn more</h3>
                         <%= markdown(@team.learn_more) %>
                     <% end %>
                 </div>

@@ -3,6 +3,8 @@ class Artefact < ApplicationRecord
   include PgSearch::Model
   multisearchable against: [:name, :team, :description]
 
+  validates :name, :description, :link, :team, presence: true
+
   has_fae_image :image
 
   def fae_display_field

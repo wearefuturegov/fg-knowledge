@@ -1,8 +1,7 @@
 @import "vars";
+@import "mixins";
 
 *{
-    // margin: 0;
-    // padding: 0;
     font-family: proxima-nova, sans-serif;
     box-sizing: border-box;
 }
@@ -15,7 +14,15 @@ body{
     max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (min-width: 500px){
+    @media screen and (min-width: 400px){
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    @media screen and (min-width: 700px){
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    @media screen and (min-width: 1100px){
         padding-left: 5vw;
         padding-right: 5vw;
     }
@@ -40,11 +47,22 @@ body{
     }
 }
 
+.section-title{
+    margin-top: 0px;
+    color: $black;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    @media screen and (min-width: 800px){
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
 .two-column-layout{
     display: grid;
     grid-row-gap: 30px;
     grid-column-gap: 60px;
-    @media screen and (min-width: 700px){
+    @media screen and (min-width: 900px){
         grid-template-columns: 1fr 2fr;
     }
     @media screen and (min-width: 900px){
@@ -54,15 +72,37 @@ body{
 }
 
 .two-column-layout__sidebar{
-    @media screen and (min-width: 700px){
+    @media screen and (min-width: 900px){
         grid-column: 1 / 2;
         grid-row: 1 / 2;
     }
 }
 
 .two-column-layout__main-content{
-    @media screen and (min-width: 700px){
+    @media screen and (min-width: 900px){
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+    }
+}
+
+.two-column-layout__main-content--markdown{
+    @include markdown
+}
+
+.three-column-grid{
+    list-style: none;
+    margin: 20px 0px 40px 0px;
+    padding: 0;
+    display: grid;
+    grid-row-gap: 20px;
+    @media screen and (min-width: 500px){
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+    }
+    @media screen and (min-width: 900px){
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        margin: 20px 0px 60px 0px;
     }
 }

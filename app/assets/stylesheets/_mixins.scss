@@ -1,6 +1,6 @@
 @import "vars";
 
-.markdown{
+@mixin markdown{
     color: $black;
     // deliberately ems
     font-size: 1.1em;

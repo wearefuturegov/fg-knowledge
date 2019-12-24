@@ -6,15 +6,12 @@
     <div class="container">
 
         <% @teams.each do |team|%>
-            <h2><%= team.name %></h2>
-            <% team.collections.each do |collection| %>
-                <h3><%= collection.name %></h3>
-                <ol>
-                    <% collection.guides.each do |guide|%>
-                        <li><%= link_to guide.name, guide_path(guide) %></li>
-                    <% end %>
-                </ol>
-            <% end %>
+            <h2 class="section-title"><%= team.name %></h2>
+            <ul class="three-column-grid">
+                <% team.collections.each do |c| %>
+                    <%= render "shared/collection", collection: c%>
+                <% end %>
+            </ul>
         <% end %>
 
     </div>

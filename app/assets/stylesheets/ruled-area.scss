@@ -1,11 +1,29 @@
 @import "vars";
+@import "mixins";
 
-.ruled-list{
+.ruled-area{
     margin-bottom: 30px;
     color: $black;
     @media screen and (min-width: 700px){
         margin-bottom: 60px;
     }
+}
+
+.ruled-area__header{
+    margin-top: 0px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 3px solid $black;
+    margin-bottom: 15px;
+}
+
+.ruled-area__context{
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.ruled-area--list{
     ul, ol{
         padding: 0;
         list-style: none;
@@ -28,16 +46,6 @@
     }
 }
 
-.ruled-list__header{
-    margin-top: 0px;
-    font-size: 1.2rem;
-    padding-bottom: 10px;
-    border-bottom: 3px solid $black;
-    margin-bottom: 15px;
-}
-
-.ruled-list__context{
-    display: block;
-    font-weight: normal;
-    margin-bottom: 5px;
+.ruled-area--markdown{
+    @include markdown
 }

@@ -6,20 +6,20 @@
     <div class="container">
 
         <div class="two-column-layout">
-            <div class="two-column-layout__main-content markdown">
+            <div class="two-column-layout__main-content two-column-layout__main-content--markdown">
                 <%= markdown(@guide.body) %>
             </div>
             
             <aside class="two-column-layout__sidebar">
 
-                <div class="ruled-list">
-                    <h3 class="ruled-list__header">On this page</h3>
+                <div class="ruled-area ruled-area--list">
+                    <h3 class="ruled-area__header">On this page</h3>
                     <%= toc(@guide.body) %>
                 </div>
 
-                <div class="ruled-list">
-                    <h3 class="ruled-list__header">
-                        <span class="ruled-list__context">Part of</span> 
+                <div class="ruled-area ruled-area--list">
+                    <h3 class="ruled-area__header">
+                        <span class="ruled-area__context">Part of</span> 
                         <%= @guide.collection.name %>
                     </h3>
                     <ol>

@@ -1,0 +1,10 @@
+<li class="artefact">
+    <%= image_tag artefact.image.asset.artefact.url, class: "artefact__image" %> 
+    <div class="artefact__info">
+        <a class="artefact__link" href="<%= artefact.link %>" target="blank">
+            <h3 class="artefact__name"><%= artefact.name %></h3>
+        </a>
+        <p class="artefact__description"><%= artefact.description %></p>
+    </div>
+    <span class="artefact__expand">Expand <%= image_tag "corners.svg" %></span>
+</li>

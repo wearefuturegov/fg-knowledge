@@ -27,6 +27,10 @@ module Fae
       version :home do
         process :resize_to_fill => [250,167]
       end
+
+      version :artefact do
+        process :resize_to_fill => [600,400]
+      end
   
     end
   end

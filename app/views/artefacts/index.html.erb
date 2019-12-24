@@ -6,15 +6,10 @@
     <div class="container">
 
         <% @teams.each do |t| %>
-            <h2><%= t.name %></h2>
-            <ul>
+            <h2 class="section-title"><%= t.name %></h2>
+            <ul class="three-column-grid">
                 <% t.artefacts.each do |a| %>
-                    <li>
-                        <a href="<%= a.link %>" target="blank">
-                            <h3><%= a.name %></h3>
-                        </a>
-                        <p><%= a.description %></p>
-                    </li>
+                    <%= render "shared/artefact", artefact: a %>
                 <% end %>
             </ul>
         <% end %>
