@@ -66,5 +66,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'fae-rails'
 gem 'redcarpet'
 gem 'pg_search'
-gem 'devise'
-gem 'omniauth-google-oauth2'

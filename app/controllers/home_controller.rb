@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+    # before_action :authenticate_user!
+    
     def index
         @teams = Team.order(:name)
         @is_home = true
