@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+    before_action :gate_access
+    
     def results
         if params["type"].nil?
             @results = PgSearch.multisearch(params["query"])

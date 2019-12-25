@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :gate_access
     
     def index
         @teams = Team.order(:name)
