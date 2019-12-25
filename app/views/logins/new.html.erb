@@ -1,1 +1,7 @@
-    <%= google_sign_in_button 'Sign in with my Google account', proceed_to: create_login_url %>
+<section class="login">
+    <%= image_tag "logo.svg" %>
+    <p>Log in with your FutureGov Google account</p>
+    <footer class="login__footer">
+        <%= google_sign_in_button 'Sign in with Google', proceed_to: create_login_url %>
+    </footer>
+</section>

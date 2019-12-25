@@ -1,5 +1,6 @@
 class LoginsController < ApplicationController  
     def new
+        render layout: "bare"
     end
 
     def create

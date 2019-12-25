@@ -1,0 +1,54 @@
+@import "vars";
+
+.login-bg{
+    background: $background;
+    padding: 0px 20px;
+}
+
+.login{
+    margin: 40px auto;
+    max-width: 350px;
+    box-shadow: 0px 3px 5px rgba(39, 34, 68, 0.15);
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+
+
+    img{
+        padding: 40px 30px 10px 30px;
+        width: 100%;
+    }
+
+    p{
+        font-size: 1.1rem;
+        color: $black;
+        margin: 10px 40px 40px 40px;
+        padding: 0;
+    }
+
+}
+
+.login__footer{
+    padding: 30px;
+    background: $background;
+
+    button{
+        display: inline-block;
+        color: $purple;
+        border: 3px solid $purple;
+        font-weight: bold;
+        font-size: 1.1em;
+        background: none;
+        border-radius: 5px;
+        padding: 15px 15px;
+        cursor: pointer;
+        &:hover{
+            background: $purple;
+            color: white;
+        }
+        &:focus{
+            outline: 3px solid $yellow;
+        }
+    }
+
+}
