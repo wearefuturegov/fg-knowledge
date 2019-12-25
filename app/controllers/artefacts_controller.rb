@@ -2,8 +2,7 @@ class ArtefactsController < ApplicationController
     before_action :gate_access
 
     def index
-        @artefacts = Artefact.all
-        @teams = Team.all
+        @teams = Team.order(:name)
     end
 
     def show

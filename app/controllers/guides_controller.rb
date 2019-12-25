@@ -2,7 +2,7 @@ class GuidesController < ApplicationController
     before_action :gate_access
     
     def index
-        @teams = Team.all
+        @teams = Team.order(:name)
     end
 
     def show
