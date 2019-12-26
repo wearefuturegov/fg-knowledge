@@ -44,6 +44,18 @@
             outline: 3px solid $yellow;
         }
     }
+
+    .ruled-area__numbered-list{
+        list-style: decimal;
+        margin-left: 20px;
+        li{
+            padding-left: 5px;
+            &::marker{
+                font-weight: normal;
+            }
+        }
+    }
+
 }
 
 .ruled-area--markdown{

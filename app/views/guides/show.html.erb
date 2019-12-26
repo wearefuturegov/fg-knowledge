@@ -22,17 +22,17 @@
                         <span class="ruled-area__context">Part of</span> 
                         <%= @guide.collection.name %>
                     </h3>
-                    <ol>
-                    <% @guide.collection.guides.each do |guide| %>
-                        <li>
-                            <% if current_page?(guide) %>
-                                <%= guide.name %>
-                            <% else %>
-                                <%= link_to guide.name, guide %>
-                            <% end %>
-                        </li>
+                    <ol class="ruled-area__numbered-list">
+                        <% @guide.collection.guides.each do |guide| %>
+                            <li>
+                                <% if current_page?(guide) %>
+                                    <%= guide.name %>
+                                <% else %>
+                                    <%= link_to guide.name, guide %>
+                                <% end %>
+                            </li>
 
-                    <% end %>
+                        <% end %>
                     </ol>
                 </div>
 
