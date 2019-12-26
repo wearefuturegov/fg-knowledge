@@ -26,6 +26,10 @@ class Guide < ApplicationRecord
     self.collection.name
   end
 
+  def description
+    self.short_description
+  end
+
   def team_name
     self.collection.team.name
   end
@@ -35,4 +39,5 @@ class Guide < ApplicationRecord
   end
 
   belongs_to :collection
+  has_one :team, through: :collection
 end

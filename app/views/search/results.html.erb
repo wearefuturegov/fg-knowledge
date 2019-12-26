@@ -15,8 +15,8 @@
                     <% @results.each do |result| %>
                     <li>
                         <%= link_to result.searchable.name, result.searchable %>
-                        <p><%= result.searchable_type %></p>
-                        <%= result.inspect %>
+                            <p><%= result.searchable.description %></p>
+                            <p><%= result.searchable_type %> | <%= result.searchable.team.name %></p>
                     </li>
                     <% end %>
                 </ul>
