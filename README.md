@@ -24,7 +24,7 @@ A rails internal wiki that showcases artefacts, guides and templates for FutureG
 
 Works fine on Heroku with no extra steps.
 
-The (encrypted) credentials are checked into the repo, and only a single environment variable must be supplied decrypt them.
+The credentials are checked into the repo [in the new way](https://www.engineyard.com/blog/rails-encrypted-credentials-on-rails-5.2), and a single environment variable must be supplied to decrypt them.
 
 1. Deploy master branch to Heroku
 2. Make sure the `RAILS_MASTER_KEY` environment variable is set so credentials can be decrypted.
@@ -32,5 +32,5 @@ The (encrypted) credentials are checked into the repo, and only a single environ
 
 If you run into trouble, check:
 
-- ⚠️ Make sure that the Heroku domain is whitelisted with the Google API key being used
-- ⚠️ Make sure that the S3 bucket exists and the bucket name, region and credentials are correct
+⚠️ Make sure that the **Heroku domain is whitelisted** with the Google API key being used
+⚠️ Make sure that the **S3 bucket** exists and the bucket name, region and credentials are correct
