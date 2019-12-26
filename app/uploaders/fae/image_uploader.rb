@@ -1,7 +1,8 @@
 # encoding: utf-8
 module Fae
     class ImageUploader < CarrierWave::Uploader::Base
-  
+      storage :aws
+      
       include CarrierWave::MiniMagick
   
       # saves file size to DB

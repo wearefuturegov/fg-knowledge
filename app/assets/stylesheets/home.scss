@@ -168,10 +168,14 @@
         padding: 30px;
     }
     &.tile--coming-soon{
-        opacity: 0.6;
+        opacity: 0.75;
+        box-shadow: none;
         .tile__headline{
             color: $black;
             text-decoration: none;
+        }
+        &:hover{
+            box-shadow: none;
         }
     }
 }
