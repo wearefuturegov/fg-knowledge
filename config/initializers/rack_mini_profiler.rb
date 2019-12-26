@@ -1,1 +1,4 @@
-Rack::MiniProfiler.config.storage = Rack::MiniProfiler::MemoryStore
+
+if Rails.env.development?
+    Rack::MiniProfiler.config.storage = Rack::MiniProfiler::MemoryStore
+end
