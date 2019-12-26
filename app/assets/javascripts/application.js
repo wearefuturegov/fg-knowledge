@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+const updateSearch = () => {
+    document.getElementById("search-form").submit(); 
+}
+
+window.updateSearch = updateSearch

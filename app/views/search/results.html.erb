@@ -1,38 +1,46 @@
+<form method="get" action="/search" id="search-form">
+    <section class="search-results-header">
+        <div class="container">
+            <h1 class="search-results-header__title">Results</h1>
+            <div class="search-form search-form--dark">
+                <input value="<%= params["query"] %>" name="query" placeholder="Search..." class="search-form__input" required>
+                <button class="search-form__button"><%= image_tag "search-dark.svg" %></button>            
+            </div>
+        </div>
+    </section>
 
-<section class="search-results-header">
-    <div class="container">
-        <h1 class="search-results-header__title">Results</h1>
+    <main class="page-body">
+        <div class="container">
 
-        <form class="search-form search-form--dark" method="get" action="/search">
-            <input value="<%= params["query"] %>" name="query" placeholder="Search..." class="search-form__input" required>
-            <button class="search-form__button"><%= image_tag "search-dark.svg" %></button>
-        </form>
-    </div>
-</section>
-
-<main class="page-body">
-    <div class="container">
-
-        <div class="two-column-layout">
-            <div class="two-column-layout__main-content">
-                <ul class="search-results">
-                    <% @results.each do |result| %>
-                    <li class="search-result">
+            <div class="two-column-layout">
+                <div class="two-column-layout__main-content">
+                    <ul class="search-results">
+                        <% @results.each do |result| %>
+                        <li class="search-result">
                             <a class="search-result__title" href="<%= url_for result.searchable %>"><%= result.searchable.name %></a>
                             <p class="search-result__description"><%= result.searchable.description %></p>
                             <p class="search-result__meta"><%= result.searchable_type %>  ·  <%= result.searchable.team.name %></p>
-                    </li>
-                    <% end %>
-                </ul>
-            </div>
-            
-            <aside class="two-column-layout__sidebar">
-                <div class="ruled-area ruled-area--markdown">
-                        <h3 class="ruled-area__header">Content type</h3>
+                        </li>
+                        <% end %>
+                    </ul>
                 </div>
-            </aside>
+                
+                <aside class="two-column-layout__sidebar">
+                    <div class="ruled-area ruled-area--markdown">
+                            <h3 class="ruled-area__header">Content type</h3>
+                            <div>
+                                <input class="checkbox" type="checkbox" name="type[]" value="Guide" id="type-guide" onclick="updateSearch()" <%= checked("Guide") %>>
+                                <label for="type-guide">Guides</label>
+                            </div>
+                            <div>
+                                <input class="checkbox" type="checkbox" name="type[]" value="Artefact" id="type-artefact" onclick="updateSearch()" <%= checked("Artefact") %>>
+                                <label for="type-artefact">Artefacts</label>
+                            </div>
+                    </div>
+                </aside>
+
+            </div>
 
         </div>
-
-    </div>
-</main>
+    </main>
+</form>
