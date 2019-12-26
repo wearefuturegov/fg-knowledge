@@ -28,7 +28,8 @@ The credentials are checked into the repo [in the new way](https://www.engineyar
 
 1. Deploy master branch to Heroku
 2. Make sure the `RAILS_MASTER_KEY` environment variable is set so credentials can be decrypted.
-2. Run `rails db:migrate` from the Heroku console to prepare the database
+3. Run `rails db:migrate` from the Heroku console to prepare the database schema
+4. Run `rails fae:seed_db` to create the initial content for the CMS
 
 If you run into trouble, check:
 
