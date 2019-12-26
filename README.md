@@ -33,4 +33,5 @@ The credentials are checked into the repo [in the new way](https://www.engineyar
 If you run into trouble, check:
 
 ⚠️ Make sure that the **Heroku domain is whitelisted** with the Google API key being used
+
 ⚠️ Make sure that the **S3 bucket** exists and the bucket name, region and credentials are correct
