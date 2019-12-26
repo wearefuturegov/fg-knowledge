@@ -2,11 +2,11 @@
 
 A rails internal wiki that showcases artefacts, guides and templates for FutureGov.
 
-Uses the [Fae CMS](https://faecms.com/) to manage content. Find it at `/admin`.
+📝 Uses the [Fae CMS](https://faecms.com/) to manage content. Find it at `/admin`.
 
-Search is powered by the `pg_search` gem. Edits to searchable documents automatically trigger rebuilds of the search index.
+🕵️‍♀️ Search is powered by the `pg_search` gem. Edits to searchable documents automatically trigger rebuilds of the search index.
 
-Access is gated to users with Google accounts under the right domain.
+🚨 Access is gated to users with Google accounts under the right domain.
 
 ## Requirements
 
