@@ -1,22 +1,26 @@
-<h1>Results</h1>
 
-<form class="search-form" method="get" action="/search">
-    <input value="<%= params["query"] %>" name="query" placeholder="Search..." class="search-form__input" required>
-    <button class="search-form__button"><%= image_tag "search.svg" %></button>
-</form>
+<section class="search-results-header">
+    <div class="container">
+        <h1 class="search-results-header__title">Results</h1>
 
+        <form class="search-form search-form--dark" method="get" action="/search">
+            <input value="<%= params["query"] %>" name="query" placeholder="Search..." class="search-form__input" required>
+            <button class="search-form__button"><%= image_tag "search-dark.svg" %></button>
+        </form>
+    </div>
+</section>
 
 <main class="page-body">
     <div class="container">
 
         <div class="two-column-layout">
             <div class="two-column-layout__main-content">
-                <ul>
+                <ul class="search-results">
                     <% @results.each do |result| %>
-                    <li>
-                        <%= link_to result.searchable.name, result.searchable %>
-                            <p><%= result.searchable.description %></p>
-                            <p><%= result.searchable_type %> | <%= result.searchable.team.name %></p>
+                    <li class="search-result">
+                            <a class="search-result__title" href="<%= url_for result.searchable %>"><%= result.searchable.name %></a>
+                            <p class="search-result__description"><%= result.searchable.description %></p>
+                            <p class="search-result__meta"><%= result.searchable_type %>  ·  <%= result.searchable.team.name %></p>
                     </li>
                     <% end %>
                 </ul>
