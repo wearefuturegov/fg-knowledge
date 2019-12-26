@@ -13,10 +13,12 @@
 
   <body>
     <header class="site-header <% if @is_home %>site-header--inverted<% end %>">
-      <a href="<%= root_path %>" class="site-header__masthead">
-        <%= image_tag "logo.svg", class: "site-header__logo" %>
+      <div  class="site-header__masthead">
+        <a href="<%= root_path %>">
+          <%= image_tag "logo.svg", class: "site-header__logo" %>
+        </a>
         <span class="site-header__phase-tag">Beta</span>
-      </a>
+      </div>
       <nav class="site-header__navigation">
         <%= link_to "Artefacts", artefacts_path, class: "site-header__nav-link" %>
         <%= link_to "Guides", guides_path, class: "site-header__nav-link" %>
