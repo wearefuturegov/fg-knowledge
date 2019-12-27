@@ -22,6 +22,7 @@
       <nav class="site-header__navigation">
         <%= link_to "Artefacts", artefacts_path, class: "site-header__nav-link" %>
         <%= link_to "Guides", guides_path, class: "site-header__nav-link" %>
+        <% unless @is_home render "shared/mini-search" end %>
       </nav>
     </header>
 
